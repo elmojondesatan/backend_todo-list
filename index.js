@@ -5,7 +5,10 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-    origin:['http://127.0.0.1:5500'],
+    origin:['http://127.0.0.1:5500',
+        "https://elmojondesatan.github.io/todo_list/",
+        "https://elmojondesatan.github.io/todo_list/paginas/dashboard.html"
+    ],
     methods: ['GET', 'POST', 'OPSTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
