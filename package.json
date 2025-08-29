@@ -1,18 +1,26 @@
 {
   "name": "backend_todo-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend para aplicación Todo List",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build": "echo 'No build step required'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elmojondesatan/backend_todo-list.git"
   },
-  "author": "",
+  "keywords": [
+    "todo",
+    "list",
+    "backend",
+    "express",
+    "mysql"
+  ],
+  "author": "elmojondesatan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/elmojondesatan/backend_todo-list/issues"
@@ -21,10 +29,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-    "express": "^5.1.0",
+    "express": "^4.18.2",
     "mysql2": "^3.14.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }
