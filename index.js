@@ -6,7 +6,11 @@ const app = express();
 
 // Configuración de CORS
 app.use(cors({
-    origin: ['https://elmojondesatan.github.io', 'http://localhost:5500', 'http://127.0.0.1:5500'],
+    origin: [
+        'https://elmojondesatan.github.io',
+        'http://localhost:5500',
+        'http://127.0.0.1:5500'
+    ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -16,10 +20,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware para preflight requests
-app.options('*', cors());
+// ⚡ ELIMINADO: app.options('*', cors());
 
-// Importar rutas CORRECTAMENTE
+// Importar rutas
 const obtenerTablas = require('./routes/get/obtenerTablas');
 const obtenerTareas = require('./routes/get/obtenerTareas');
 

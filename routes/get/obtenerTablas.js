@@ -8,9 +8,9 @@ router.get('/tablas', async (req, res) => {
         const [resultadoTablas] = await db.query('SHOW TABLES');
         res.json(resultadoTablas);
     } catch (error) {
-        console.error("Error: ", error);
+        console.error("Error en /tablas: ", error);
         res.status(500).json({ error: "Error al obtener tablas" });
     }
 });
 
-module.exports = router;    
+module.exports = router;
