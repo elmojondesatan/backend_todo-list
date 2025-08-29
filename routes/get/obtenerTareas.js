@@ -1,18 +1,18 @@
-const db = require('../../config/database')
+const db = require('../../config/database');
 const express = require('express');
 const router = express.Router();
 
-
-router.get('/tareas', async(req,res)=>{
-
+// GET /api/tareas
+router.get('/tareas', async (req, res) => {
     try {
-
-        let [todaslasTareas] = await db.query('SELECT * FROM tareas');
+        const [todaslasTareas] = await db.query('SELECT * FROM tareas');
         res.json(todaslasTareas);
-        
     } catch (error) {
-        console.log("Error: " , error);
+        console.error("Error: ", error);
+        res.status(500).json({ error: "Error al obtener tareas" });
     }
 });
+
+
 
 module.exports = router;

@@ -1,19 +1,16 @@
-const db = require('../../config/database')
-const express = require('express')
+const db = require('../../config/database');
+const express = require('express');
 const router = express.Router();
 
-// Mi ruta get
-router.get('/tablas', async(req,res)=>{});
-router.post('/agregarTarea', async(req,res)=>{
-
+// GET /api/tablas
+router.get('/tablas', async (req, res) => {
     try {
-        
-        let [resultadoTablas] = await db.query('SHOW TABLES');
+        const [resultadoTablas] = await db.query('SHOW TABLES');
         res.json(resultadoTablas);
-
     } catch (error) {
-        console.log("Error: ", error)
+        console.error("Error: ", error);
+        res.status(500).json({ error: "Error al obtener tablas" });
     }
 });
 
-module.exports = router;
+module.exports = router;    
